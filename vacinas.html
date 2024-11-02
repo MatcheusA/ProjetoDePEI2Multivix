@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vacinas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <header class="dark">
+      <div class="container">
+        <div class="logo">
+          <img src="imagens/Logo.png" alt="Logo Clínica Veterinária" />
+          Clínica Veterinária
+        </div>
+        <div class="header-nav">
+          <nav>
+            <ul>
+              <li><a href="index.html">Página Inicial</a></li>
+              <li><a href="tutores.html">Perfis dos Tutores</a></li>
+              <li><a href="animais.html">Perfis dos Animais</a></li>
+              <li><a href="consultas.html">Consultas</a></li>
+              <li><a href="vacinas.html">Vacinas</a></li>
+            </ul>
+          </nav>
+          <button class="theme-toggle" aria-label="Mudar Tema">🌙</button>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <h1>Vacinas</h1>
+      <button
+        id="adicionar-vacina-btn"
+        class="full-width button"
+        onclick="showModal('modal-vacina')"
+      >
+        Adicionar Nova Vacina
+      </button>
+      <ul id="vacinas-list" class="list-group">
+      </ul>
+    </main>
+    <footer class="dark">
+      <div class="container">
+        <p>&copy; 2023 Clínica Veterinária. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <div id="modal-vacina" class="modal">
+      <div class="modal-content">
+        <button class="close" onclick="hideModal('modal-vacina')">
+          &times;
+        </button>
+        <h2>Adicionar Nova Vacina</h2>
+        <form id="form-vacina">
+          <div class="form-group">
+            <label for="vacina-status">Status da Vacina:</label>
+            <div class="radio-group">
+              <div>
+                <input
+                  type="radio"
+                  id="vacina-aplicada"
+                  name="status-vacina"
+                  value="Aplicada"
+                  required
+                />
+                <label for="vacina-aplicada">Aplicada</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="vacina-programada"
+                  name="status-vacina"
+                  value="Programada"
+                  required
+                />
+                <label for="vacina-programada">Programada</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vacina-nome">Nome da Vacina:</label>
+            <input type="text" id="vacina-nome" name="nome" required />
+          </div>
+          <div class="form-group">
+            <label for="vacina-data">Data da Vacinação:</label>
+            <input type="date" id="vacina-data" name="data" required />
+          </div>
+          <div class="form-group">
+            <label for="vacina-tipo">Tipo de Vacina:</label>
+            <input type="text" id="vacina-tipo" name="tipo" required />
+          </div>
+          <div class="form-group">
+            <label for="vacina-produto">Nome do Produto (opcional):</label>
+            <input type="text" id="vacina-produto" name="produto" />
+          </div>
+          <div class="form-group">
+            <label for="vacina-dose-atual">Dose Atual (opcional):</label>
+            <input type="number" id="vacina-dose-atual" name="dose-atual" />
+          </div>
+          <div class="form-group">
+            <label for="vacina-total-doses">Total de Doses (opcional):</label>
+            <input type="number" id="vacina-total-doses" name="total-doses" />
+          </div>
+          <div class="form-group">
+            <label for="vacina-observacoes"
+              >Escreva suas observações aqui (opcional):</label
+            >
+            <textarea id="vacina-observacoes" name="observacoes"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="vacina-fabricante"
+              >Nome da Fabricante (opcional):</label
+            >
+            <input type="text" id="vacina-fabricante" name="fabricante" />
+          </div>
+          <div class="form-group">
+            <label for="vacina-partida">Número de Partida (opcional):</label>
+            <input type="text" id="vacina-partida" name="partida" />
+          </div>
+          <div class="form-group">
+            <label for="vacina-fabricacao"
+              >Data de Fabricação (opcional):</label
+            >
+            <input type="date" id="vacina-fabricacao" name="fabricacao" />
+          </div>
+          <div class="form-group">
+            <label for="vacina-validade">Data de Validade (opcional):</label>
+            <input type="date" id="vacina-validade" name="validade" />
+          </div>
+          <div class="form-group label-switch">
+            <label for="vacina-reforco"
+              >Terá próxima dose ou reforço (opcional)?</label
+            >
+            <label class="switch">
+              <input type="checkbox" id="vacina-reforco" name="reforco" />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="vacina-animal">Animal:</label>
+            <select id="vacina-animal" name="animal" required></select>
+          </div>
+          <button type="submit" class="full-width">Adicionar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

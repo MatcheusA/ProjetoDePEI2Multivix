@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfis dos Tutores</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <header class="dark">
+      <div class="container">
+        <div class="logo">
+          <img src="imagens/Logo.png" alt="Logo Clínica Veterinária" />
+          Clínica Veterinária
+        </div>
+        <div class="header-nav">
+          <nav>
+            <ul>
+              <li><a href="index.html">Página Inicial</a></li>
+              <li><a href="tutores.html">Perfis dos Tutores</a></li>
+              <li><a href="animais.html">Perfis dos Animais</a></li>
+              <li><a href="consultas.html">Consultas</a></li>
+              <li><a href="vacinas.html">Vacinas</a></li>
+            </ul>
+          </nav>
+          <button class="theme-toggle" aria-label="Mudar Tema">🌙</button>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <h1>Perfis dos Tutores</h1>
+      <button
+        id="adicionar-tutor-btn"
+        class="full-width button"
+        aria-label="Adicionar Novo Tutor"
+      >
+        Adicionar Novo Tutor
+      </button>
+      <ul id="tutores-list" class="list-group">
+      
+      </ul>
+    </main>
+    <footer class="dark">
+      <div class="container">
+        <p>&copy; 2023 Clínica Veterinária. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+   
+    <div
+      id="modal-tutor"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="modal-tutor-label"
+    >
+      <div class="modal-content">
+        <button class="close" aria-label="Fechar Modal" id="fechar-modal-tutor">
+          &times;
+        </button>
+        <h2 id="modal-tutor-label">Adicionar Novo Tutor</h2>
+        <form id="form-tutor">
+          <div class="form-group">
+            <label for="tutor-nome">Nome:</label>
+            <input type="text" id="tutor-nome" name="nome" required />
+          </div>
+          <div class="form-group">
+            <label for="tutor-telefone">Telefone:</label>
+            <input
+              type="text"
+              id="tutor-telefone"
+              name="telefone"
+              required
+              minlength="14"
+              maxlength="15"
+              pattern="\(\d{2}\)\s\d{4,5}-\d{4}"
+              placeholder="(XX) XXXXX-XXXX"
+            />
+          </div>
+          <div class="form-group">
+            <label for="tutor-email">Email:</label>
+            <input type="email" id="tutor-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="tutor-endereco">Endereço:</label>
+            <input type="text" id="tutor-endereco" name="endereco" required />
+          </div>
+          <div class="form-group">
+            <label for="tutor-preferencia">Espécie de Preferência:</label>
+            <input
+              type="text"
+              id="tutor-preferencia"
+              name="preferencia"
+              required
+            />
+          </div>
+          <button type="submit">Adicionar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

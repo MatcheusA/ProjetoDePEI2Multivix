@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfis dos Animais</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <header class="dark">
+      <div class="container">
+        <div class="logo">
+          <img src="imagens/Logo.png" alt="Logo Clínica Veterinária" />
+          Clínica Veterinária
+        </div>
+        <div class="header-nav">
+          <nav>
+            <ul>
+              <li><a href="index.html">Página Inicial</a></li>
+              <li><a href="tutores.html">Perfis dos Tutores</a></li>
+              <li><a href="animais.html">Perfis dos Animais</a></li>
+              <li><a href="consultas.html">Consultas</a></li>
+              <li><a href="vacinas.html">Vacinas</a></li>
+            </ul>
+          </nav>
+          <button class="theme-toggle" aria-label="Mudar Tema">🌙</button>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <h1>Perfis dos Animais</h1>
+      <button
+        id="adicionar-animal-btn"
+        class="full-width button"
+        onclick="showModal('modal-animal')"
+      >
+        Adicionar Novo Animal
+      </button>
+      <ul id="animais-list" class="list-group">
+        
+      </ul>
+    </main>
+    <footer class="dark">
+      <div class="container">
+        <p>&copy; 2023 Clínica Veterinária. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    
+    <div id="modal-animal" class="modal">
+      <div class="modal-content">
+        <button class="close" onclick="hideModal('modal-animal')">
+          &times;
+        </button>
+        <h2>Adicionar Novo Animal</h2>
+        <form id="form-animal">
+          <div class="form-group">
+            <label for="animal-nome">Nome:</label>
+            <input type="text" id="animal-nome" name="nome" required />
+          </div>
+          <div class="form-group">
+            <label for="animal-especie">Espécie:</label>
+            <input type="text" id="animal-especie" name="especie" required />
+          </div>
+          <div class="form-group">
+            <label for="animal-raca">Raça:</label>
+            <input type="text" id="animal-raca" name="raca" required />
+          </div>
+          <div class="form-group">
+            <label for="animal-temperamento">Temperamento:</label>
+            <select id="animal-temperamento" name="temperamento" required>
+              <option value="">Selecione</option>
+              <option value="Estressado">Estressado</option>
+              <option value="Calmo">Calmo</option>
+              <option value="Agressivo">Agressivo</option>
+              <option value="Amedrontado">Amedrontado</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="animal-porte">Porte:</label>
+            <select id="animal-porte" name="porte" required>
+              <option value="">Selecione</option>
+              <option value="Pequeno">Pequeno</option>
+              <option value="Médio">Médio</option>
+              <option value="Grande">Grande</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="animal-castrado">Castrado:</label>
+            <select id="animal-castrado" name="castrado" required>
+              <option value="">Selecione</option>
+              <option value="Sim">Sim</option>
+              <option value="Não">Não</option>
+              <option value="Indefinido">Indefinido</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="animal-idade">Idade:</label>
+            <select id="animal-idade" name="idade" required></select>
+          </div>
+          <div class="form-group">
+            <label for="animal-tutor">Tutor:</label>
+            <select id="animal-tutor" name="tutor" required></select>
+          </div>
+          <div class="form-group label-switch">
+            <label for="animal-estado">O Animal está vivo?</label>
+            <label class="switch">
+              <input type="checkbox" id="animal-estado" name="estado" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+          <button type="submit" class="full-width">Adicionar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

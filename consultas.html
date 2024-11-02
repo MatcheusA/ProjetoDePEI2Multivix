@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dark">
+    <header class="dark">
+      <div class="container">
+        <div class="logo">
+          <img src="imagens/Logo.png" alt="Logo Clínica Veterinária" />
+          Clínica Veterinária
+        </div>
+        <div class="header-nav">
+          <nav>
+            <ul>
+              <li><a href="index.html">Página Inicial</a></li>
+              <li><a href="tutores.html">Perfis dos Tutores</a></li>
+              <li><a href="animais.html">Perfis dos Animais</a></li>
+              <li><a href="consultas.html">Consultas</a></li>
+              <li><a href="vacinas.html">Vacinas</a></li>
+            </ul>
+          </nav>
+          <button class="theme-toggle" aria-label="Mudar Tema">🌙</button>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+      <h1>Consultas</h1>
+      <button
+        id="agendar-consulta-btn"
+        class="full-width button"
+        onclick="showModal('modal-consulta')"
+      >
+        Agendar Nova Consulta
+      </button>
+      <ul id="consultas-list" class="list-group">
+       
+      </ul>
+    </main>
+    <footer class="dark">
+      <div class="container">
+        <p>&copy; 2023 Clínica Veterinária. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    
+    <div id="modal-consulta" class="modal">
+      <div class="modal-content">
+        <button class="close" onclick="hideModal('modal-consulta')">
+          &times;
+        </button>
+        <h2>Agendar Nova Consulta</h2>
+        <div
+          id="error-message"
+          style="display: none; color: red; margin-bottom: 10px"
+        ></div>
+        <form id="form-consulta">
+          <div class="form-group">
+            <label for="tipo-consulta">Tipo de consulta:</label>
+            <div class="radio-group">
+              <div>
+                <input
+                  type="radio"
+                  id="consulta-padrao"
+                  name="tipo-consulta"
+                  value="Padrão"
+                  required
+                />
+                <label for="consulta-padrao">Padrão</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="consulta-detalhada"
+                  name="tipo-consulta"
+                  value="Detalhada"
+                  required
+                />
+                <label for="consulta-detalhada">Detalhada</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="consulta-data">Data:</label>
+            <input type="date" id="consulta-data" name="data" required />
+          </div>
+          <div class="form-group">
+            <label for="consulta-horario">Horário:</label>
+            <input type="time" id="consulta-horario" name="horario" required />
+          </div>
+          <div class="form-group">
+            <label for="consulta-tutor">Tutor:</label>
+            <select id="consulta-tutor" name="tutor" required></select>
+          </div>
+          <div class="form-group">
+            <label for="consulta-animal">Animal:</label>
+            <select id="consulta-animal" name="animal" required></select>
+          </div>
+
+          
+          <div id="anamnese-section" style="display: none">
+            <h3>Anamnese</h3>
+            <div class="form-group">
+              <label for="historico-medico">Histórico Médico:</label>
+              <textarea
+                id="historico-medico"
+                name="historico-medico"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="reprodutivo">Histórico Reprodutivo:</label>
+              <textarea id="reprodutivo" name="reprodutivo"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="ambiente">Informações Sobre o Ambiente:</label>
+              <textarea id="ambiente" name="ambiente"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="dieta">Dieta e Nutrição:</label>
+              <textarea id="dieta" name="dieta"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="higiene">Rotina de Higiene:</label>
+              <textarea id="higiene" name="higiene"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="atividade">Atividade Física:</label>
+              <textarea id="atividade" name="atividade"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="medicamentos"
+                >Medicamentos e Tratamentos em Uso:</label
+              >
+              <textarea id="medicamentos" name="medicamentos"></textarea>
+            </div>
+          </div>
+          <button type="submit">Agendar</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
